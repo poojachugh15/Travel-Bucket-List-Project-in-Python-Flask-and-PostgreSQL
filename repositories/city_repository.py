@@ -44,13 +44,12 @@ def delete_all():
 
 
 def delete(id):
-    city = None
+    # city = None
     sql = "DELETE FROM cities WHERE id = %s"
     values = [id]
-    result = run_sql(sql, values)
+    run_sql(sql, values)
 
-
-# def update(city):
-#     sql = "UPDATE cities SET (name, country_id, visited) = (%s, %s, %s) WHERE id = %s"
-#     values = [city.name, city.country.id, city.visited, city.id]
-#     run_sql(sql, values)
+def update(city):
+    sql = "UPDATE cities SET (name, visited) = (%s, %s) WHERE id = %s"
+    values = [city.name, city.visited, city.id]
+    run_sql(sql, values)

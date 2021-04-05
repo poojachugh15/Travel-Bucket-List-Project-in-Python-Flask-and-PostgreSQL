@@ -21,7 +21,6 @@ def new_country():
     return render_template('/countries/new.html')
 
 # CREATE
-# POST '/countries'
 @country_blueprint.route('/countries', methods=['POST'])
 def create_country():
     name = request.form["name"]
