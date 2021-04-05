@@ -20,13 +20,15 @@ def all_countries():
 def new_country():
     return render_template('/countries/new.html')
 
-# create
+# CREATE
+# POST '/countries'
 @country_blueprint.route('/countries', methods=['POST'])
 def create_country():
-    new_country = request.form['name']
-    country = Country(new_country)
+    name = request.form["name"]
+    visited = request.form["visited"]
+    country = Country(name, visited)
     country_repository.save(country)
-    return redirect('/countries')
+    return redirect("/countries")
 
 # SHOW
 @country_blueprint.route('/countries/<id>', methods=['GET'])
@@ -41,12 +43,19 @@ def edit_country(id):
     country = country_repository.select(id)
     return render_template('/countries/edit.html', country=country)
 
+# UPDATE
 @country_blueprint.route('/countries/<id>', methods=['POST'])
 def update_country(id):
-    # country = country_repository.select(id)
-    name = request.form["name"]
-    visited = request.form["visited"]
-    country = Country(name, visited)
+    country = country_repository.select(id)
+    country.name = request.form["name"]
+    country.visited = request.form["visited"]
     country_repository.update(country)
-    return redirect ('index.html')
-    # return redirect(url_for('countries.show_country', id = id))
+    return redirect ('/countries')
+    
+    
+# DELETE
+
+@country_blueprint.route("/countries/<id>/delete", methods=["POST"])
+def delete(id):
+    country_repository.delete(id)
+    return redirect("/countries")

@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+{{country.id}}
 <form action="/countries/{{country.id}}" method="post" class="form">
     <div>
         <label for="name">Country Name:</label>
-        <input type="text" name="name" id="name" value={{country.name}}>
+        <input type="text" name="name" id="name" value="{{country.name}}">
         <div>
             <label for="visited">Visited:</label>
             <select id="visited" name="visited">
