@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>List of Cities </h1>
+
+<table>
+  <tr>
+  
+  </tr>
+  {% for city in all_cities %}
+  <tr>
+    <td><a href="//countries/cities"> {{city.name}} </a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock content %}

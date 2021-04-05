@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>List of Sights </h1>
+
+<table>
+  <tr>
+  
+  </tr>
+  {% for sight in all_sights %}
+  <tr>
+    <td><a href="//countries/cities/sights"> {{sight.name}} </a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock content %}

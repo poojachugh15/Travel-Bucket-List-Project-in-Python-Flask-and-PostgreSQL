@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Travel Adventure!!</title>
+</head>
+<body>
+  <div id="grid-container">
+    <header>
+      <h1>Travel Bucket List !!</h1>
+    </header>
+    <div id="menu">
+      <main class="flex flex--row">
+      <nav>
+        <nav>
+          <ul class="menu">
+            <a href="/">Home</a>
+            <br> 
+            <a href="/countries">Countries</a>
+            <br> 
+            <a href="/countries/cities">Cities</a>
+            <br> 
+            <a href="/countries/cities/sights">Sights</a>
+            <br> 
+            <a href="/Countries/new">Add New Country</a>
+            <br> 
+            <a href="/countries/cities/new">Add New City</a>
+            <br> 
+            <a href="/countries/cities/sights/new">Add New Sight</a>
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+            <br> 
+          </ul>
+        </nav>
+  </div>
+</main>
+  <section id="main-content">
+    
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </section>
+    </div>
+    <footer> Travel Adventure !!</footer>
+</body>
+</html>
