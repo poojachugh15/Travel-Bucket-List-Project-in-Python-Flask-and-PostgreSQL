@@ -32,34 +32,25 @@ def create_city():
 
 
 
-# # SHOW
-# @cities_blueprint.route("/countries/cities/<id>", methods=['GET'])
-# def show_cities(id):
-#     city = city_repository.select(id)
-#     return render_template("/cities/show.html", city=city)
-
-
-
 # EDIT
 @cities_blueprint.route("/countries/cities/<id>/edit", methods=['GET'])
 def edit_city(id):
     city = city_repository.select(id)
-    countries = country_repository.select_all()
-    return render_template('/cities/edit.html', city=city, countries = countries)
+    country = country_repository.select_all()
+    return render_template('cities/edit.html', city=city, country=country)
+
 
 
  # UPDATE
 @cities_blueprint.route('/countries/cities/<id>', methods=['POST'])
 def update_city(id):
-    city = city_repository.select(id)
-    city.name = request.form['name']
+    name = request.form['name']
     country_id = request.form['country_id']
-    city.visited = request.form['visited']
-    city = city_repository.select(country_id)
+    visited = request.form['visited']
+    country = country_repository.select(country_id)
+    city = City(name, country, visited, id)
     city_repository.update(city)
     return redirect('/countries/cities')
-
-
 
 # DELETE
 @cities_blueprint.route('/countries/cities/<id>/delete', methods=['POST'])

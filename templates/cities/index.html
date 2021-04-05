@@ -14,10 +14,10 @@
 
   <img src="https://source.unsplash.com/500x500/?{{city.name}}" alt="">
     <div>
-      <form class="edit" action="/countries/cities{{city.id}}/edit">
+      <form action="/countries/cities/{{city.id}}/edit">
         <input type="submit" value="Edit"/>
       </form>
-
+      
     <form action="/countries/cities/{{city.id}}/delete" method="POST">
         <input type="submit" value="Delete"/>
     </form>

@@ -2,26 +2,32 @@
 
 {% block content %}
 <div class="container form">
-<form action="/countries/cities/{{city.id}}/edit" method="post" class="form">
+<form action="/countries/cities/{{city.id}}" method="post">
     <div>
-        <label for="name">Country Name:</label>
-        <input type="text" name="name" id="name" value="{{country.name}}">
-        <div>
-            <label for="visited">Visited:</label>
-            <select id="visited" name="visited">
-              <option value="True" 
-              {% if city.visited %} selected="selected"  {% endif %}>
-                True
-              </option>
-              <option value="False"
-              {% if not country.visited %} selected="selected"  {% endif %}>
-                False
-              </option>
-            </select>
-          </div>
+        <label for="name">City name:</label>
+        <input type="text" name="name" id="name" value={{city.name}}>
     </div>
     
-    <button class="button-update" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Submit</button>
+    <div>
+        <label for="country">Country:</label>
+        <select name="country_id" id="country_id">
+            {% for country in country %}
+            <option value="" disabled selected hidden>Select country:</option>
+            <option value="{{ country.id }}">{{ country.name }} </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="visited">Visited:</label>
+        <select name="visited" id="visited">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    </div>
+
+
+    <button class="button-update" type="submit">Update</button>
 </form>
 </div>
 
