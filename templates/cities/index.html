@@ -1,41 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container"></div>
-<h1>List of Cities </h1>
 
+
+<h1>List of Cities </h1>
+<div class="container">
 
   {% for city in all_cities %}
   <div class="w3-container align-center">
     
     <h2>{{city.name}}</h2>
-    
     <div class="w3-card-4" style="width:50%">
-  <img src="https://source.unsplash.com/500x500/?{{city.name}}" alt=""></div>
+
+  <img src="https://source.unsplash.com/500x500/?{{city.name}}" alt="">
     <div>
       <form class="edit" action="/countries/cities{{city.id}}/edit">
-        <input type="submit" value="Edit" class="button-update">
+        <input type="submit" value="Edit"/>
       </form>
 
-    <form class="delete-from" action="/countries/city{{city.id}}/delete" method="POST">
-        <input type="submit" value="Delete" class="button-update">
+    <form action="/countries/cities/{{city.id}}/delete" method="POST">
+        <input type="submit" value="Delete"/>
     </form>
     </div>
-
-  <!-- <hgroup>
-      <h4><a href="//countries/cities"> {{city.name}} </a></h4>
-      <p>
-        
-      <form class="edit" action="/countries/cities{{city.id}}/edit">
-        <input type="submit" value="Edit" class="button-update">
-      </form>
-
-    <form class="delete-from" action="/countries/city{{city.id}}/delete" method="POST">
-        <input type="submit" value="Delete" class="button-update">
-    </form>
-      </p></hgroup> -->
+  </div>
+  </div>
   {% endfor %}
 </div>
-       
-<!-- <button class="button-with-link"><a href="/countries/city/new" style="text-decoration: none; color: #566270";>Add New City</a></button> -->
+
 {% endblock content %}
