@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container form">
 <form action="/countries/cities" method="post">
     <div>
         <label for="country">Country:</label>
@@ -22,7 +23,7 @@
         </select>
     </div>
 
-    <button type="submit">Add New City</button>
+    <button type="submit" class="button-update"><i class="fa fa-plus" aria-hidden="true"></i>Add New City</button>
 </form>
-
+</div>
 {% endblock %}

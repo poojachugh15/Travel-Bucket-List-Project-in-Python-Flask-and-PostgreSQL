@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{country.id}}
+<div class="container form">
 <form action="/countries/{{country.id}}" method="post" class="form">
     <div>
         <label for="name">Country Name:</label>
@@ -23,5 +23,6 @@
     
     <button class="button-update" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Submit</button>
 </form>
+</div>
 
 {% endblock %}
