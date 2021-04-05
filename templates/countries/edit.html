@@ -4,8 +4,21 @@
 
 <form action="/countries/{{country.id}}" method="post" class="form">
     <div>
-        <label for="name">Enter new Country name:</label>
+        <label for="name">Country Name:</label>
         <input type="text" name="name" id="name" value={{country.name}}>
+        <div>
+            <label for="visited">Visited:</label>
+            <select id="visited" name="visited">
+              <option value="True" 
+              {% if country.visited %} selected="selected"  {% endif %}>
+                True
+              </option>
+              <option value="False"
+              {% if not country.visited %} selected="selected"  {% endif %}>
+                False
+              </option>
+            </select>
+          </div>
     </div>
     
     <button class="button-update" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Submit</button>

@@ -9,59 +9,28 @@
   <title>Travel Adventure!!</title>
 </head>
 <body>
-  <div id="grid-container">
-    <header>
-      <h1>Travel Bucket List !!</h1>
-    </header>
-    <div id="menu">
-      <main class="flex flex--row">
-      <nav>
-        <nav>
-          <ul class="menu">
-            <a href="/">Home</a>
-            <br> 
-            <a href="/countries">Countries</a>
-            <br> 
-            <a href="/countries/cities">Cities</a>
-            <br> 
-            <a href="/countries/cities/sights">Sights</a>
-            <br> 
-            <a href="/Countries/new">Add New Country</a>
-            <br> 
-            <a href="/countries/cities/new">Add New City</a>
-            <br> 
-            <a href="/countries/cities/sights/new">Add New Sight</a>
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-            <br> 
-          </ul>
-        </nav>
-  </div>
-</main>
-  <section id="main-content">
-    
+      <header>
+        <h1>Travel Bucket List !!</h1>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/countries">Countries</a></li>
+        <li><a href="/Countries/new">Add New Country</a></li>
+        <li><a href="/countries/cities">Cities</a></li>
+        <li><a href="/countries/cities/new">Add New City</a></li>
+        <li><a href="/countries/cities/sights">Sights</a></li>
+        <li><a href="/countries/cities/sights/new">Add New Sight</a></li>
+        <li><a href="/destinations">Destinations</a></li>
+        <li><a href="/destinations/new">Add New Destination</a></li> 
+        
+      </ul>
+    </nav>
+  </header>
   <div class="container">
     {% block content %}
     {% endblock %}
-  </section>
-    </div>
-    <footer> Travel Adventure !!</footer>
+  </div>
+  
 </body>
 </html>
+

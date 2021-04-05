@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Blueprint, request, redirect
+from flask import Flask, render_template, Blueprint, request, redirect, url_for
 
 from models.country import Country
 import repositories.country_repository as country_repository
@@ -40,3 +40,13 @@ def show_country(id):
 def edit_country(id):
     country = country_repository.select(id)
     return render_template('/countries/edit.html', country=country)
+
+@country_blueprint.route('/countries/<id>', methods=['POST'])
+def update_country(id):
+    # country = country_repository.select(id)
+    name = request.form["name"]
+    visited = request.form["visited"]
+    country = Country(name, visited)
+    country_repository.update(country)
+    return redirect ('index.html')
+    # return redirect(url_for('countries.show_country', id = id))

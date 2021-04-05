@@ -10,8 +10,8 @@ import repositories.sight_repository as sight_repository
 
 
 def save(sight):
-    sql = "INSERT INTO sights (name, city_id, country_id, visited) VALUES (%s, %s, %s, %s) RETURNING *"
-    values = [sight.name, sight.city.id, sight.country.id, sight.visited]
+    sql = "INSERT INTO sights (name, city_id, visited) VALUES (%s, %s, %s) RETURNING *"
+    values = [sight.name, sight.city.id, sight.visited]
     results = run_sql(sql, values)
     id = results[0]['id']
     sight.id = id
@@ -26,17 +26,9 @@ def select_all():
     
     for row in results:
         city = city_repository.select(row['city_id'])
-        country = country_repository.select(row['country_id'])
-        sight = Sight(row["name"], city, country, row["visited"], row["id"])
+        sight = Sight(row["name"], city,  row["visited"], row["id"])
         sights.append(sight)
     return sights
-
-    # for row in results:
-    #     city = user_repository.select(row['user_id'])
-    #     location = location_repository.select(row['location_id'])
-    #     visit = Visit(user, location, row['review'], row['id'])
-    #     visits.append(visit)
-    # return visits
 
 
 def select(id):

@@ -12,6 +12,7 @@
     <hgroup>
       <h4><a href="//countries/"> {{country.name}} </a></h4>
       <p>
+        
       <form class="edit" action="/countries/{{country.id}}/edit">
         <input type="submit" value="Edit" class="button-update">
       </form>
@@ -21,20 +22,11 @@
     </form>
       </p></hgroup>
   
-  <!-- <tr>
-    <td><a href="//countries/"> {{country.name}} </a>
-      <img src="https://source.unsplash.com/300x300/?{{country.name}}" alt="">
-      
-  </td></tr>
-  <tr> -->
-    <!-- <img src="https://source.unsplash.com/600x800/?france" alt=""> -->
-  <!-- <td><a href="//countries/"> {{country.name}} </a></td> -->
-  
 
   {% endfor %}
 </section>
        
-  
+<button class="button-with-link"><a href="/countries/new" style="text-decoration: none; color: #566270";>Add New Country</a></button>
 
 
 {% endblock content %}

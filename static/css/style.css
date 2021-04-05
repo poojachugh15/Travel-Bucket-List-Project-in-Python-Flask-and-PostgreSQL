@@ -1,78 +1,84 @@
-body {
-
-  font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    margin: 0;
+body{
+  font-family: "Helvetica", arial, sans-serif; font-size: 16px;
 }
 
-header {
-  padding: 16px;
-  background-color: green;
-  color: black;
-  text-align: center;
-  grid-area: header;
-}
-
-#menu {
-  padding: 30px;
-  background-color: none;
-  grid-area: menu;
-  font-weight: bold;
- 
-}
-
-nav {
-  margin-top: 19.92px;
+.task {
+  border: 1px solid #ccc;
+  width: 300px;
+  min-height: 68px;
+  padding: 10px;
   display: flex;
-  flex-flow: column nowrap;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  margin-right: 0.3em;
+}
+
+.duration{
+  color: #8899a6;
+  font-size: 13px;
+  margin-left: 20px;
+}
+
+.buttons {
+  margin-top: 10px;
+  margin-left: 2px;
+  font-size: 1.4em;
+  color: #aab8c2;
+}
+
+.buttons i {
+  width: 80px;
+}
+
+input, select, button {
+  font-size: 100%;
+  width : 100%;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.trash-button{
+  display: contents;
+  font-size: 65%;
+}
+
+
+.delete-form{
+  display: inline;
+}
+
+.menu{
+  display: flex;
+  padding: 10px;
+  background-color: grey;
+  color: white;
+}
+
+.menu li a{
+  text-decoration: none;
+}
+
+.menu li a:visited{
+  color: white;
+}
+
+.menu li{
+  padding-right: 10px;
+  list-style: none;
+  color: white;
+  font-family: "Helvetica", arial, sans-serif; font-size: 14px;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  margin: 0 auto;
   align-items: left;
-}
-
-#main-content {
-  padding: 32px;
-  grid-area: main;
-}
-
-footer {
-  padding: 16px;
-  background-color: green;
-  color: black;
-  font-weight: bold;
-  text-align: center;
-  grid-area: footer;
-}
-
-#grid-container {
- display: grid;
- grid-template-areas:
- 'header header'
- 'menu main'
- 'footer footer'
- ;
- grid-template-columns: 3fr 7fr;
-
-}
-#gallery {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.image {
-  width: 250px;
-  height: 250px;
-  background-color: lightblue;
-  border: 1px solid white;
-  flex: 33%;
-}
-
-.large {
-flex: 66%;
-}
-
-.first {
- order: -1;
-}
-
-.last {
-order: 1;
 }

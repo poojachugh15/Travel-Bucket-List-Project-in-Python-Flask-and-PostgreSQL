@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section class="form-container">
+    <form action="/countries" method="post">
+        <div>
+            <label for="name">Country name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <button type="submit" class="button-update"><i class="fa fa-plus" aria-hidden="true"></i> Add New Country</button>
+
+    </form>
+</section>
+{% endblock%}
