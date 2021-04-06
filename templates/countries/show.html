@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container form">
+<div class="container">
     <form action="/countries/{{country.id}}" method="post" class="form">
     <label for="name">Country : {{country.name}} </label> <br><br>
     <label for="visited">Visited : {{country.visited}} </label>

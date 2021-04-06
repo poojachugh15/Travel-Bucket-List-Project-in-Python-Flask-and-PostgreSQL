@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container form">
+<div class="container">
     <form action="/cities/{{city.id}}" method="post" class="form">
     <label for="name">City : {{city.name}} </label> <br><br>
     <label for="visited">Visited : {{city.visited}} </label><br>
