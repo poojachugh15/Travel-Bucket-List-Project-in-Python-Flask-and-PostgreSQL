@@ -30,7 +30,7 @@ def create_country():
     return redirect("/countries")
 
 # SHOW
-@country_blueprint.route('/countries/<id>', methods=['GET'])
+@country_blueprint.route('/countries/<id>')
 def show_country(id):
     country = country_repository.select(id)
     return render_template('/countries/show.html', country=country)
