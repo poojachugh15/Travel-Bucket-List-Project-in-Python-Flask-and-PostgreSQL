@@ -12,8 +12,8 @@
         <label for="country">Country:</label>
         <select name="country_id" id="country_id">
             {% for country in countries %}
-            <option value="{{ city.country_id }}"
-            {% if city.country_id == country.id %}
+            <option value="{{ country.id }}"
+            {% if city.country.id == country.id %}
             selected="selected"  {% endif %}   >
             {{ country.name }}
         </option>

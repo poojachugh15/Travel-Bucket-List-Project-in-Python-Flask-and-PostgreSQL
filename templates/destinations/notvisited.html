@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Countries list: </h1>
+<div class="container">
+  
+  {% for destination in all_destinations %}
+  
+          {% if destination.visited == False %}
+  <div class="w3-container align-center">
+    <h3>{{destination.name}}</h3>
+   
+ {% endif %}
+ 
+{% endfor %}
+    <p><a href="/countries">Return to list</a></p>
+
+</div>
+{% endblock %}

@@ -58,3 +58,14 @@ def update_country(id):
 def delete(id):
     country_repository.delete(id)
     return redirect("/countries")
+
+@country_blueprint.route("/countries/visited", methods=['GET'])
+def visited_countries():
+    visited_countries = country_repository.select_all()
+    return render_template('/countries/visited.html', visited_countries=visited_countries)
+
+@country_blueprint.route("/countries/notvisited", methods=['GET'])
+def bucket_list():
+    bucket_list = country_repository.select_all()
+    return render_template('/countries/bucket_list.html', bucket_list=bucket_list)
+

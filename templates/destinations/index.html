@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container form">
+  
+<form action="/destinations" method = "POST">
+  <div>
+    <label for="country">Country:</label>
+    <select name="country_id" id="country_id">
+        {% for country in countries %}
+        <option value="" disabled selected hidden >Choose Country:</option>
+        <option value="{{ country.id }}">{{ country.name }} </option>
+        {% endfor %}
+    </select>
+</div>
+    
+    <button type="submit">Search</button>
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+{% endblock %}
