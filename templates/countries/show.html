@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <p>{{country.name}}</p>
-    <p>visited? {{country.visited}}</p>
-    <p><a href="/countries/{{country.id}}/edit"></a>Edit</p>
+<div class="container form">
+    <form action="/countries/{{country.id}}" method="post" class="form">
+    <label for="name">Country : {{country.name}} </label> <br><br>
+    <label for="visited">Visited : {{country.visited}} </label>
+    
+    <!-- <p>visited? {{country.visited}}</p> -->
+    <p><a href="/countries/{{country.id}}/edit">Edit</a></p>
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
 {% endblock %}
