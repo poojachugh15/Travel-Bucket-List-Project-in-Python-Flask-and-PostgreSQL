@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container form">
+    <form action="/cities/{{city.id}}" method="post" class="form">
+    <label for="name">City : {{city.name}} </label> <br><br>
+    <label for="visited">Visited : {{city.visited}} </label><br>
+    <p>Country : {{ city.country.name }}</p>
+    <br><br> 
+    <p><a href="/countries/cities/{{city.id}}/edit">Edit</a></p>
+</form>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+{% endblock %}
