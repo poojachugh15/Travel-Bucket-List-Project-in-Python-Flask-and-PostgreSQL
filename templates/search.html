@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="w3-container align-center form">
+    <h3>Search you dream destination:</h3>
+    <form action="/search" method="POST">
+        <div>
+            <label for="search">Search for Country or City:</label>
+            <input type="text" name="searchtext" id="searchtext" value="{{searchText}}"/>
+        </div>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+{% if searchText %}
+<div class="w3-container align-center">
+  <h2>{{searchText}}</h2>
+  <div class="w3-card-4" style="width:50%">
+    <img src="https://source.unsplash.com/500x500/?{{searchText}}" alt=""/>
+ </div>
+</div>
+{% endif %}
+
+
+{% endblock %}

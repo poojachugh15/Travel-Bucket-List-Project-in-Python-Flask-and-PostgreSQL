@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container form">
+<div class="w3-container align-center">
+    <h2>Edit to your list: </h2>
 <form action="/countries/cities/{{city.id}}" method="post">
     <div>
-        <label for="name">City name:</label>
+        <label for="name">City :</label>
         <input type="text" name="name" id="name" value={{city.name}}>
     </div>
     
@@ -24,13 +25,13 @@
     <div>
         <label for="visited">Visited:</label>
         <select name="visited" id="visited">
-            <option value="true">True</option>
-            <option value="false">False</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
         </select>
     </div>
 
 
-    <button class="button-update" type="submit">Update</button>
+    <button class="button-update" type="submit">Update </button>
 </form>
 </div>
 

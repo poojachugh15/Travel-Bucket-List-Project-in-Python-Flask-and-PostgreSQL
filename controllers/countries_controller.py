@@ -69,3 +69,23 @@ def bucket_list():
     bucket_list = country_repository.select_all()
     return render_template('/countries/bucket_list.html', bucket_list=bucket_list)
 
+@country_blueprint.route("/search")
+def search():
+    return render_template("/search.html")
+
+@country_blueprint.route("/search", methods=['POST'])
+def searchText():
+    print(request.form)
+    formSearchText = request.form.get("searchtext")
+    if formSearchText:
+     return render_template("/search.html", searchText=formSearchText)
+    else:
+     return render_template("/search.html") 
+
+   
+@country_blueprint.route("/bycountry", methods=['POST'])
+def search_by_country():
+    print(request.form)
+    id = request.form["country_id"]
+    country_repository.select(id)
+    return redirect(f"/countries/{id}")

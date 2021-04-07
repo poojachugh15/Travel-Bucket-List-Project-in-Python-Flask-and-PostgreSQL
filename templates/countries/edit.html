@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container form">
+<div class="container align-center">
 <form action="/countries/{{country.id}}" method="post" class="form">
     <div>
         <label for="name">Country Name:</label>
@@ -11,17 +11,17 @@
             <select id="visited" name="visited">
               <option value="True" 
               {% if country.visited %} selected="selected"  {% endif %}>
-                True
+                Yes
               </option>
               <option value="False"
               {% if not country.visited %} selected="selected"  {% endif %}>
-                False
+                No
               </option>
             </select>
           </div>
     </div>
     
-    <button class="button-update" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i> Submit</button>
+    <button class="button-update" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i>Submit</button>
 </form>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

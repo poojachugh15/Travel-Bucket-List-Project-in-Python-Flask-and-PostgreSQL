@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container form">
+<div class="container align-center">
 <form action="/countries" method="post">
     <div>
         <label for="name">Country:</label>
@@ -10,8 +10,8 @@
       <div>
         <label for="visited">Visited:</label>
         <select id="visited" name="visited">
-          <option value="true">True</option>
-          <option value="false">False</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
         </select>
       </div>
       <button type="submit" class="button-update"><i class="fa fa-plus" aria-hidden="true"></i> Add Country</button>

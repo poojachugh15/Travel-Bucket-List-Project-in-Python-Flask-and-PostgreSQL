@@ -7,28 +7,61 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {font-family: "Lato", sans-serif}
+  .mySlides {display: none}
+  </style>
   <title>Travel Adventure!!</title>
 </head>
 <body>
-      <header>
-        <h1>Travel Bucket List !!</h1>
-    <nav>
-      <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/countries">Countries</a></li>
-        <li><a href="/countries/new">Add New Country</a></li>
-        <li><a href="/countries/cities">Cities</a></li>
-        <li><a href="/countries/cities/new">Add New City</a></li>
-        <li><a href="/countries/cities/destinations">Destinations</a></li>
-        
-      </ul>
-    </nav>
-  </header>
-  <div>
+<div>
+  Travel Adventure
+
+</div>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <div class="w3-display-container w3-margin-top w3-center">
+      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Travel Bucket List</b></span></h1>
+    </div>
+        <a href="/" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title="COUNTRIES">COUNTRIES <i class="fa fa-caret-down"></i></button>     
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/countries" class="w3-bar-item w3-button">Show All</a>
+            <a href="/countries/new" class="w3-bar-item w3-button">Add New</a>
+            <a href="/countries/visited" class="w3-bar-item w3-button">Visited</a>
+            <a href="/countries/notvisited" class="w3-bar-item w3-button">WishList</a>
+          </div>
+        </div>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title="CITIES">CITIES <i class="fa fa-caret-down"></i></button>     
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="/countries/cities" class="w3-bar-item w3-button">Show All</a>
+            <a href="/countries/cities/new" class="w3-bar-item w3-button">Add New</a>
+            <a href="/cities/visited" class="w3-bar-item w3-button">Visited</a>
+            <a href="/cities/notvisited" class="w3-bar-item w3-button">WishList</a>
+          </div>
+        </div>
+        <a href="/search" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+      </div>
+</div>
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
     {% block content %}
     {% endblock %}
-  </div>
-  <footer>Travel Adventure 2021</footer>
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <p class="w3-medium">Travel Adventure 2021</p>
+</footer>
 </body>
 </html>
 
