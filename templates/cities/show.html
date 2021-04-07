@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
+<div class="w3-container align-center">
+    <h2>{{ city.name }}</h2>
+
+    <div class="w3-card-4" style="width:50%">
+        <img src="https://source.unsplash.com/500x500/?{{city.name}}" alt=""/>
+        <div>
     <form action="/cities/{{city.id}}" method="post" class="form">
-    <label for="name">City : {{city.name}} </label> <br><br>
-    <label for="visited">Visited : {{city.visited}} </label><br>
+        <p>City : {{ city.name }}</p>
+    <!-- <label for="name">City : {{city.name}} </label>  -->
+    <label for="visited">Visited : {{city.visited}} </label>
     <p>Country : {{ city.country.name }}</p>
-    <br><br> 
-    <p><a href="/countries/cities/{{city.id}}/edit">Edit</a></p>
+     
+    <p><a href="/countries/cities/{{city.id}}/edit">Add to your Wish list</a></p>
 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </div>
 
 {% endblock %}

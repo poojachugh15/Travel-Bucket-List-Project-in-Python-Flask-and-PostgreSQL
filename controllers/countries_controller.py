@@ -81,11 +81,3 @@ def searchText():
      return render_template("/search.html", searchText=formSearchText)
     else:
      return render_template("/search.html") 
-
-   
-@country_blueprint.route("/bycountry", methods=['POST'])
-def search_by_country():
-    print(request.form)
-    id = request.form["country_id"]
-    country_repository.select(id)
-    return redirect(f"/countries/{id}")
